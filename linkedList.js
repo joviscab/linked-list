@@ -1,4 +1,4 @@
-//Node class with value property, link to nextNode both as null by default
+//Node class with value property
 class Node {
   constructor(value, next = null) {
     this.value = value;
@@ -16,7 +16,22 @@ class LinkedList {
   //Append(value) to the end of the list
   append(value) {
     let node = new Node(value);
-    let current;
+
+    //If the list is empty
+    if (this.head === null) {
+      this.head = node;
+    } else {
+      let current = this.head;
+
+      //Traverse to the end of the list
+      while (current.next) {
+        current = current.next;
+      }
+      //Link the new node at the end
+      current.next = node;
+    }
+    //Increase the size of the list
+    this.size++;
   }
 
   //Prepend(value) to the start of the list
@@ -25,7 +40,7 @@ class LinkedList {
     this.size++;
   }
 
-  //Size total numberof nodes in the list
+  //Size total number of nodes in the list
 
   //Head first node
 
@@ -40,8 +55,29 @@ class LinkedList {
   //Find(value) returns the index of the node containing value or null
 
   //ToString LinkedList objects as strings - format: (value) -> (value) -> (value) -> null
+  toString() {
+    let current = this.head;
+    let result = "";
 
+    while (current) {
+      result += `(${current.value}) -> `;
+      current = current.next;
+    }
+    result += "null";
+    console.log(result);
+    return result;
+  }
   //InsertAt(value, index)
 
   //RemoveAt(index)
 }
+
+const ll = new LinkedList();
+
+ll.prepend(200);
+ll.prepend(300);
+ll.prepend(400);
+ll.append(800);
+ll.append(900);
+
+ll.toString();
