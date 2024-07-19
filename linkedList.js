@@ -110,6 +110,28 @@ class LinkedList {
   }
 
   //RemoveAt(index)
+  removeAt(index) {
+    if (index > 0 && index > this.size) {
+      return;
+    }
+    let current = this.head;
+    let previous;
+    let count = 0;
+
+    //Remove first
+    if (index === 0) {
+      this.head = current.next;
+    } else {
+      while (count < index) {
+        count++;
+        previous = current;
+        current = current.next;
+      }
+      previous.next = current.next;
+    }
+
+    this.size--;
+  }
 }
 
 const ll = new LinkedList();
@@ -121,6 +143,7 @@ ll.append(800);
 ll.append(900);
 ll.insertAt(700, 5);
 
-//ll.at(0);
+//ll.at(1);
+//ll.removeAt(0);
 
-//ll.toString();
+ll.toString();
