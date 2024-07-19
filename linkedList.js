@@ -132,6 +132,11 @@ class LinkedList {
 
     this.size--;
   }
+  //Clear list
+  clearList() {
+    this.head = null;
+    this.size = 0;
+  }
 }
 
 const ll = new LinkedList();
@@ -145,5 +150,5 @@ ll.insertAt(700, 5);
 
 //ll.at(1);
 //ll.removeAt(0);
-
+//ll.clearList();
 ll.toString();
