@@ -41,6 +41,9 @@ class LinkedList {
   }
 
   //Size total number of nodes in the list
+  getSize() {
+    console.log(this.size);
+  }
 
   //Head first node
 
@@ -145,10 +148,10 @@ ll.prepend(200);
 ll.prepend(300);
 ll.prepend(400);
 ll.append(800);
-ll.append(900);
-ll.insertAt(700, 5);
+ll.insertAt(700, 2);
 
 //ll.at(1);
 //ll.removeAt(0);
 //ll.clearList();
 ll.toString();
+//ll.getSize();
