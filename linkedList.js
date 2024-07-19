@@ -68,6 +68,33 @@ class LinkedList {
     return result;
   }
   //InsertAt(value, index)
+  insertAt(value, index) {
+    // If index is out of range
+    if (index > 0 && index > this.size) {
+      return;
+    }
+    //If index is first
+    if (index === 0) {
+      this.prepend(value);
+      return;
+    }
+    const node = new Node(value);
+    let current;
+    let previous;
+    //Set current to first
+    current = this.head;
+    let count = 0;
+
+    while (count < index) {
+      previous = current; //Node before index
+      count++;
+      current = current.next; //Node after index
+    }
+    node.next = current;
+    previous.next = node;
+
+    this.size++;
+  }
 
   //RemoveAt(index)
 }
@@ -79,5 +106,6 @@ ll.prepend(300);
 ll.prepend(400);
 ll.append(800);
 ll.append(900);
+ll.insertAt(700, 5);
 
 ll.toString();
