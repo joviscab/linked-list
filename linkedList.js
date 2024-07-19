@@ -47,6 +47,19 @@ class LinkedList {
   //Tail last node
 
   //At(index)
+  at(index) {
+    let current = this.head;
+    let count = 0;
+
+    while (current) {
+      if (count == index) {
+        console.log(current.value);
+      }
+      count++;
+      current = current.next;
+    }
+    return null;
+  }
 
   //Pop removes last element
 
@@ -108,4 +121,6 @@ ll.append(800);
 ll.append(900);
 ll.insertAt(700, 5);
 
-ll.toString();
+//ll.at(0);
+
+//ll.toString();
