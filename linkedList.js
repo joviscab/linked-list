@@ -109,6 +109,20 @@ class LinkedList {
   }
 
   //Contains(value) returns true if the passed in value is in the list
+  contains(value) {
+    let current = this.head;
+
+    //Traverse the list
+    while (current) {
+      if (current.value === value) {
+        console.log("true");
+        return true;
+      }
+      current = current.next;
+    }
+    console.log("false");
+    return false;
+  }
 
   //Find(value) returns the index of the node containing value or null
 
@@ -196,8 +210,9 @@ ll.insertAt(700, 4);
 //ll.removeAt(0);
 //ll.clearList();
 //ll.popLast();
+ll.contains(200);
 
-ll.toString();
+//ll.toString();
 
 //ll.getTail();
 //ll.getSize();
