@@ -83,6 +83,30 @@ class LinkedList {
   }
 
   //Pop removes last element
+  popLast() {
+    if (this.head === null) {
+      console.log("The list is empty");
+      return;
+    }
+
+    if (this.head.next === null) {
+      //If there is only one node
+      this.head = null;
+    } else {
+      let current = this.head;
+
+      //Traverse to the second-to-last node
+      while (current.next.next) {
+        current = current.next;
+      }
+
+      //Remove the last node
+      current.next = null;
+    }
+
+    // Decrease the size of the list
+    this.size--;
+  }
 
   //Contains(value) returns true if the passed in value is in the list
 
@@ -171,7 +195,9 @@ ll.insertAt(700, 4);
 //ll.at(1);
 //ll.removeAt(0);
 //ll.clearList();
-//ll.toString();
+//ll.popLast();
+
+ll.toString();
 
 //ll.getTail();
 //ll.getSize();
