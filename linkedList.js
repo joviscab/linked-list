@@ -125,6 +125,21 @@ class LinkedList {
   }
 
   //Find(value) returns the index of the node containing value or null
+  find(value) {
+    let current = this.head;
+    let index = 0;
+
+    while (current) {
+      if (current.value === value) {
+        console.log(index);
+        return index;
+      }
+      current = current.next;
+      index++;
+    }
+    console.log("null");
+    return null;
+  }
 
   //ToString LinkedList objects as strings - format: (value) -> (value) -> (value) -> null
   toString() {
@@ -210,7 +225,9 @@ ll.insertAt(700, 4);
 //ll.removeAt(0);
 //ll.clearList();
 //ll.popLast();
-ll.contains(200);
+//ll.contains(200);
+
+//ll.find(200);
 
 //ll.toString();
 
