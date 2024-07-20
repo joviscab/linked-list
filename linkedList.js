@@ -55,6 +55,17 @@ class LinkedList {
   }
 
   //Tail last node
+  getTail() {
+    if (this.head === null) {
+      console.log("The list is empty");
+      return;
+    }
+    let current = this.head;
+    while (current.next) {
+      current = current.next;
+    }
+    console.log(current.value);
+  }
 
   //At(index)
   at(index) {
@@ -155,12 +166,12 @@ ll.prepend(200);
 ll.prepend(300);
 ll.prepend(400);
 ll.append(800);
-ll.insertAt(700, 0);
+ll.insertAt(700, 4);
 
 //ll.at(1);
 //ll.removeAt(0);
 //ll.clearList();
 //ll.toString();
 
-ll.getHead();
+//ll.getTail();
 //ll.getSize();
