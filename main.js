@@ -1,4 +1,5 @@
-// example uses class syntax - adjust as necessary
+import LinkedList from "./linkedList.js";
+
 const list = new LinkedList();
 
 list.append("dog");
@@ -8,4 +9,4 @@ list.append("hamster");
 list.append("snake");
 list.append("turtle");
 
-console.log(list.toString());
+list.toString();

@@ -104,7 +104,7 @@ class LinkedList {
       current.next = null;
     }
 
-    // Decrease the size of the list
+    //Decrease the size of the list
     this.size--;
   }
 
@@ -156,7 +156,7 @@ class LinkedList {
   }
   //InsertAt(value, index)
   insertAt(value, index) {
-    // If index is out of range
+    //If index is out of range
     if (index > 0 && index > this.size) {
       return;
     }
@@ -213,23 +213,4 @@ class LinkedList {
   }
 }
 
-const ll = new LinkedList();
-
-ll.prepend(200);
-ll.prepend(300);
-ll.prepend(400);
-ll.append(800);
-ll.insertAt(700, 4);
-
-//ll.at(1);
-//ll.removeAt(0);
-//ll.clearList();
-//ll.popLast();
-//ll.contains(200);
-
-//ll.find(200);
-
-//ll.toString();
-
-//ll.getTail();
-//ll.getSize();
+export default LinkedList;
